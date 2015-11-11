@@ -1,0 +1,223 @@
+// bower:scss
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+// endbower
+
+@import "variables";
+
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-family: serif;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+
+  #company {
+    img{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    h1 {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 3em;
+      font-style: italic;
+      font-family: serif;
+    }
+  }
+}
+
+.social {
+  float: right;
+  margin-top: 40px;
+
+  a {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    background: black;
+    border-radius: 50%;
+    color: white;
+    display: inline-block;
+    vertical-align: bottom;
+    text-align: center
+  }
+}
+
+#menu {
+  width: 100%;
+  border: 1px solid gray;
+  background: rgba(0,0,0,0.3);
+
+  input, label {
+    display: none;
+  }
+
+  ul {
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+    display: flex;
+
+    li {
+      order: 1;
+      flex-grow: 1;
+      display: inline-block;
+      text-align: center;
+
+      a {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+#content {
+
+  img {
+    width: 100%;
+  }
+  .column-left {
+    width: 80%;
+    display: inline-block;
+
+    .post {
+      margin-right: 10px;
+
+      .post-meta {
+        margin-bottom: 10px;
+
+        h2 {
+          font-size: 2em;
+          margin-bottom: 5px;
+        }
+      }
+
+      .post-body {
+        aside {
+          float: right;
+          margin-right: 20px;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  .column-right {
+    width: 20%;
+    display: inline-block;
+    vertical-align: top;
+
+    h3 {
+      font-size: 1.4em;
+      margin-bottom: 22px;
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  min-height: 40px;
+  margin-top: 40px;
+  border: 1px solid grey;
+  border-bottom: none;
+  background: rgba(0,0,0,0.3);
+}
+
+.hide-desktop {
+  display: none;
+}
+.hide-mobile {
+  display: block;
+}
+
+@media (max-width: $mobile-width) {
+  .container {
+    width: 100%;
+  }
+
+  header {
+    width: auto;
+    text-align: center;
+
+    #company h1 { font-size: 2em; }
+
+    .social {
+      display: none;
+    }
+  }
+
+  #menu {
+    input[type=checkbox] {
+      display: inline-block;
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    label {
+      display: block;
+      padding: 20px;
+      text-align: center;
+      padding-bottom: 0;
+    }
+    input[type=checkbox]:checked ~ ul {
+      height: auto;
+    }
+
+    ul {
+      height: 0px;
+      overflow: hidden;
+      display: block;
+
+      li {
+        display: block;
+        margin: 10px 0;
+        border-bottom: 1px solid gray;
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  #content {
+    .column-left {
+      width: 100%;
+
+      aside {
+        float: none !important;
+      }
+    }
+    .column-right {
+      display: none;
+    }
+  }
+
+  .social {
+    float: none;
+    text-align: center;
+    margin: 10px 0 !important;
+  }
+
+  .hide-desktop {
+    display: block;
+  }
+  .hide-mobile {
+    display: none;
+  }
+}
+
+
